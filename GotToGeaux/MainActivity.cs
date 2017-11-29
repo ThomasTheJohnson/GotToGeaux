@@ -34,20 +34,20 @@ namespace GotToGeaux
         private void SignUpDialog_mOnSignUpComplete(object sender, OnSignUpEventArgs e)
         {
             Thread.Sleep(3000);
-            var folder = Android.OS.Environment.DataDirectory + Java.IO.File.Separator + "Users";
+            var folder = FilesDir + Java.IO.File.Separator + "Users";
             var extFileName = folder + Java.IO.File.Separator + e.Email.ToString() + ".txt";
 
-            string input = e.FirstName + "/\n" + e.Email + "/\n" + e.Password + "/\n";
+            string input = e.FirstName + "\n" + e.Email + "\n" + e.Password + "\n";
             byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
-
+            
             try
             {
                 if (!System.IO.Directory.Exists(folder))
                     System.IO.Directory.CreateDirectory(folder);
                 using (var fs = new System.IO.FileStream(extFileName, System.IO.FileMode.OpenOrCreate))
                 {
-                    fs.Write(toBytes, 0, 1000);
-
+                    fs.Write(toBytes, 0, toBytes.Length);
+                    fs.Close();
                 }
             }
             catch
