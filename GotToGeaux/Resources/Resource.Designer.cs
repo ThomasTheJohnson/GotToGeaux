@@ -82,9 +82,6 @@ namespace GotToGeaux
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070007
-			public const int btnDialogEmail = 2131165191;
-			
 			// aapt resource value: 0x7f070000
 			public const int createAccountText = 2131165184;
 			
@@ -96,6 +93,9 @@ namespace GotToGeaux
 			
 			// aapt resource value: 0x7f070003
 			public const int signUpButton = 2131165187;
+			
+			// aapt resource value: 0x7f070007
+			public const int signUpDialogButton = 2131165191;
 			
 			// aapt resource value: 0x7f070005
 			public const int signUpEmailText = 2131165189;

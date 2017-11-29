@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using System.Threading;
 
 namespace GotToGeaux
 {
@@ -26,6 +27,20 @@ namespace GotToGeaux
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
             SignUpDialog signUpDialog = new SignUpDialog();
             signUpDialog.Show(transaction, "dialog fragment");
+
+            signUpDialog.mOnSignUpComplete += SignUpDialog_mOnSignUpComplete;
+        }
+
+        private void SignUpDialog_mOnSignUpComplete(object sender, OnSignUpEventArgs e)
+        {
+            Thread.Sleep(5000);
+            Thread signUpService = new Thread(SignUpUser);
+            signUpService.Start();
+        }
+
+        private void SignUpUser()
+        {
+            Thread.Sleep(2000);
         }
     }
 }

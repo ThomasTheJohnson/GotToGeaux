@@ -14,13 +14,34 @@ namespace GotToGeaux
 {
     public class OnSignUpEventArgs : EventArgs
     {
-        private string FirstName;
-        private string Email;
-        private string Password;
+        private string mFirstName;
+        private string mEmail;
+        private string mPassword;
 
-        public string getFirstName;
-  
+        public string FirstName
+        {
+            get { return mFirstName; }
+            set { mFirstName = value; }
+        }
 
+        public string Email
+        {
+            get { return mEmail; }
+            set { mEmail = value; }
+        }
+
+        public string Password
+        {
+            get { return mPassword; }
+            set { mPassword = value; }
+        }
+
+        public OnSignUpEventArgs( string firstName, string email, string password) : base()
+        {
+            FirstName = firstName;
+            Email = email;
+            Password = password;
+        }
 
     }
     class SignUpDialog : DialogFragment
@@ -29,7 +50,9 @@ namespace GotToGeaux
         private EditText InputFirstName;
         private EditText InputEmail;
         private EditText InputPassword;
-        private Button SignUpButton;
+        private Button SignUpDialogButton;
+
+        public event EventHandler<OnSignUpEventArgs> mOnSignUpComplete;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -41,16 +64,25 @@ namespace GotToGeaux
             InputFirstName = view.FindViewById<EditText>(Resource.Id.signUpFirstNameText);
             InputEmail = view.FindViewById<EditText>(Resource.Id.signUpEmailText);
             InputPassword = view.FindViewById<EditText>(Resource.Id.signUpPasswordText);
-            SignUpButton = view.FindViewById<Button>(Resource.Id.signUpButton);
+            SignUpDialogButton = view.FindViewById<Button>(Resource.Id.signUpDialogButton);
 
-            //SignUpButton.Click += MSignUpButton_Click;
+            SignUpDialogButton.Click += SignUpDialogButton_Click;
             return view;
         }
 
-        private void MSignUpButton_Click(object sender, EventArgs e)
+        private void SignUpDialogButton_Click(object sender, EventArgs e)
         {
             //This is the handler for the user clicking the sign up button
-            
+            if(InputFirstName.Text.ToString().CompareTo("") == 0 || InputEmail.Text.ToString().CompareTo("") == 0 || InputPassword.Text.ToString().CompareTo("") == 0)
+            {
+
+            }
+            else
+            {
+                mOnSignUpComplete.Invoke(this, new OnSignUpEventArgs(InputFirstName.Text, InputEmail.Text, InputPassword.Text));
+                this.Dismiss();
+            }
+
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)
