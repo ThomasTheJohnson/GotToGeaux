@@ -33,9 +33,36 @@ namespace GotToGeaux
 
         private void SignUpDialog_mOnSignUpComplete(object sender, OnSignUpEventArgs e)
         {
-            Thread.Sleep(5000);
-            Thread signUpService = new Thread(SignUpUser);
-            signUpService.Start();
+            Thread.Sleep(3000);
+            var folder = Android.OS.Environment.DataDirectory + Java.IO.File.Separator + "Users";
+            var extFileName = folder + Java.IO.File.Separator + e.Email.ToString() + ".txt";
+
+            string input = e.FirstName + "/\n" + e.Email + "/\n" + e.Password + "/\n";
+            byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
+
+            try
+            {
+                if (!System.IO.Directory.Exists(folder))
+                    System.IO.Directory.CreateDirectory(folder);
+                using (var fs = new System.IO.FileStream(extFileName, System.IO.FileMode.OpenOrCreate))
+                {
+                    fs.Write(toBytes, 0, 1000);
+
+                }
+            }
+            catch
+            {
+                RunOnUiThread(() =>
+                {
+                    var builder = new AlertDialog.Builder(this);
+                    builder.SetMessage("Not gonna lie, some shit went wrong.");
+                    builder.SetTitle("Unable to sign up user.");
+                    builder.Show();
+                });
+                return;
+            }
+            //Thread signUpService = new Thread(SignUpUser);
+            //signUpService.Start();
         }
 
         private void SignUpUser()
