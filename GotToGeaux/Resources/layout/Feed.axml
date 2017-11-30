@@ -75,7 +75,7 @@
             android:background="#D29F13"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="LSU Football Team - Florida Stadium"
+            android:text="Tim Cook - San Francisco, California"
             android:id="@+id/entry6" />
         <Button
             android:textColor="#fff"

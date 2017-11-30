@@ -26,13 +26,14 @@ namespace GotToGeaux
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
 
-            var view = base.OnCreateView(inflater, container, savedInstanceState);
+            base.OnCreateView(inflater, container, savedInstanceState);
+            var view = inflater.Inflate(Resource.Layout.UserProfile, container, false);
 
-            darkButton = view.FindViewById<Button>(Resource.Id.darkTheme);
-            darkButton.Click += DarkButton_Click;
+            //darkButton = view.FindViewById<Button>(Resource.Id.darkTheme);
+            //darkButton.Click += DarkButton_Click;
 
-            lightButton = view.FindViewById<Button>(Resource.Id.lightTheme);
-            lightButton.Click += LightButton_Click;
+            //lightButton = view.FindViewById<Button>(Resource.Id.lightTheme);
+            //lightButton.Click += LightButton_Click;
 
             return view;
         }

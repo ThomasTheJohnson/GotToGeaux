@@ -136,7 +136,7 @@ namespace GotToGeaux
                     button3.Text = "Timothy Ratliff - Patrick F. Taylor Hall";
                     button4.Text = "JJ Juarez - Raising Canes";
                     button5.Text = "John Snow - The Wall";
-                    button6.Text = "LSU Football Team - Florida Stadium";
+                    button6.Text = "Tim Cook - San Francisco, California";
                     button7.Text = "Vincent Yasmine - Middleton Library";
                     button8.Text = "Alexandra Viola - Middleton Library";
                     button9.Text = "Markus Persson - California";
@@ -168,12 +168,9 @@ namespace GotToGeaux
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
-            //Disconnecting this so that we don't crash on accident while presenting
-            //FragmentTransaction transaction = FragmentManager.BeginTransaction();
-            //Settings settings = new Settings();
-            //settings.Show(transaction, "dialog fragment");
-
-            
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            Settings settings = new Settings();
+            settings.Show(transaction, "dialog fragment");
         }
 
         private void ProfileButton_Click(object sender, EventArgs e)
