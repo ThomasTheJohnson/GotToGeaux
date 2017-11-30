@@ -19,6 +19,11 @@ namespace GotToGeaux
         {
             base.OnCreate(bundle);
 
+            var builder = new AlertDialog.Builder(this);
+            builder.SetMessage("Welcome " + Intent.GetStringExtra("Username"));
+            builder.SetTitle("User authenticated");
+            builder.Show();
+
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Feed);
 

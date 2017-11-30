@@ -1,11 +1,12 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
 using System.Threading;
 
 namespace GotToGeaux
 {
-    [Activity(Label = "GotToGeaux", MainLauncher = true, NoHistory = true)]
+    [Activity(Label = "GotToGeaux", MainLauncher = true)]
     public class MainActivity : Activity
     {
         private Button SignUpButton;
@@ -64,11 +65,9 @@ namespace GotToGeaux
 
             if (e.Password.CompareTo(lines[2]) == 0)
             {
-                //var builder = new AlertDialog.Builder(this);
-                //builder.SetMessage("Welcome " + lines[0]);
-                //builder.SetTitle("User authenticated");
-                //builder.Show();
-                StartActivity(typeof(FeedActivity));
+                var feed = new Intent(this, typeof(FeedActivity));
+                feed.PutExtra("Username", lines[0]);
+                StartActivity(feed);
             }
             else
             {
