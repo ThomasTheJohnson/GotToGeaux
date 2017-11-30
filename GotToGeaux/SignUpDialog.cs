@@ -73,7 +73,7 @@ namespace GotToGeaux
         private void SignUpDialogButton_Click(object sender, EventArgs e)
         {
             //This is the handler for the user clicking the sign up button
-            if(InputFirstName.Text.ToString().CompareTo("") == 0 || InputEmail.Text.ToString().CompareTo("") == 0 || InputPassword.Text.ToString().CompareTo("") == 0)
+            if (InputFirstName.Text.ToString().CompareTo("") == 0 || InputEmail.Text.ToString().CompareTo("") == 0 || InputPassword.Text.ToString().CompareTo("") == 0)
             {
                 //Error Handling
             }
@@ -82,7 +82,6 @@ namespace GotToGeaux
                 mOnSignUpComplete.Invoke(this, new OnSignUpEventArgs(InputFirstName.Text, InputEmail.Text, InputPassword.Text));
                 this.Dismiss();
             }
-
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)

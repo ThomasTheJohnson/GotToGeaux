@@ -73,8 +73,17 @@ namespace GotToGeaux
                 });
                 return;
             }
-            int i = 1;
-
+            else
+            {
+                RunOnUiThread(() =>
+                {
+                    var builder = new AlertDialog.Builder(this);
+                    builder.SetMessage("User email or password are incorrect.");
+                    builder.SetTitle("User failed to authenticate");
+                    builder.Show();
+                });
+                return;
+            }
         }
 
         //SIGN UP BUTTON STUFF
