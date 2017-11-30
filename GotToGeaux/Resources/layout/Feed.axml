@@ -16,59 +16,76 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Thomas Johnson - Tiger Band Hall" />
+            android:id="@+id/entry1" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Timothy Ratliff - Patrick F. Taylor Hall" />
+            android:text="Thomas Johnson - Tiger Band Hall"
+            android:id="@+id/entry2"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="JJ Juarez - Raising Canes" />
+            android:text="Timothy Ratliff - Patrick F. Taylor Hall"
+            android:id="@+id/entry3"/>
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="JJ Juarez - Raising Canes"
+            android:id="@+id/entry4"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="John Snow - The Wall"
-            android:id="@+id/button2" />
+            android:id="@+id/entry5" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="LSU Football Team - Florida Stadium" />
+            android:text="LSU Football Team - Florida Stadium"
+            android:id="@+id/entry6"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Vincent Yasmine - Middleton Library" />
+            android:text="Vincent Yasmine - Middleton Library"
+            android:id="@+id/entry7"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Alexandra Viola - Middleton Library" />
+            android:text="Alexandra Viola - Middleton Library"
+            android:id="@+id/entry8"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Markus Persson - California" />
+            android:text="Markus Persson - California"
+            android:id="@+id/entry9"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Jeff Kaplan - Austin, Texas" />
+            android:text="Jeff Kaplan - Austin, Texas"
+            android:id="@+id/entry10"/>
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Rachael Shel - Seattle, Washington" />
+            android:text="Rachael Shel - Seattle, Washington"
+            android:id="@+id/entry11" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Michael Santana - Paris, France" />
+            android:text="Michael Santana - Paris, France"
+            android:id="@+id/entry12" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Luke Smith - Bellevue, Washington" />
+            android:text="Luke Smith - Bellevue, Washington"
+            android:id="@+id/entry13" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Marie Tiffiny - Angelfire, New Mexico" />
+            android:text="Marie Tiffiny - Angelfire, New Mexico"
+            android:id="@+id/entry14" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Tim Cook - San Francisco, California" />
+            android:text="Tim Cook - San Francisco, California"
+            android:id="@+id/entry15" />
     </LinearLayout>
 </ScrollView>
