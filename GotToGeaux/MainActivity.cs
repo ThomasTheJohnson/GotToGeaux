@@ -9,6 +9,7 @@ namespace GotToGeaux
     public class MainActivity : Activity
     {
         private Button SignUpButton;
+        private Button SignInButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -17,10 +18,66 @@ namespace GotToGeaux
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
+            //Login Screen Sign Up Button
             SignUpButton = FindViewById<Button>(Resource.Id.signUpButton);
             SignUpButton.Click += SignUpButton_Click;
+
+            //Login Screen Sign In Button
+            SignInButton = FindViewById<Button>(Resource.Id.signInButton);
+            SignInButton.Click += SignInButton_Click;
         }
 
+        //SIGN IN BUTTON STUFF
+        private void SignInButton_Click(object sender, System.EventArgs e)
+        {
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            SignInDialog signInDialog = new SignInDialog();
+            signInDialog.Show(transaction, "dialog frragment");
+
+            signInDialog.mOnSignInComplete += SignInDialog_mOnSignInComplete;
+        }
+
+        private void SignInDialog_mOnSignInComplete(object sender, OnSignInEventArgs e)
+        {
+            Thread.Sleep(3000);
+            var folder = FilesDir + Java.IO.File.Separator + "Users";
+            var extFileName = folder + Java.IO.File.Separator + e.Email.ToString() + ".txt";
+            string[] lines = new string[3];
+
+            try
+            {
+                if (!System.IO.Directory.Exists(folder))
+                    throw new System.Exception();
+                lines = System.IO.File.ReadAllLines(extFileName);
+            }
+            catch
+            {
+                RunOnUiThread(() =>
+                {
+                    var builder = new AlertDialog.Builder(this);
+                    builder.SetMessage("User does not exist!");
+                    builder.SetTitle("Unable to authenticate user.");
+                    builder.Show();
+                });
+                return;
+            }
+
+            if (e.Password.CompareTo(lines[2]) == 0)
+            {
+                RunOnUiThread(() =>
+                {
+                    var builder = new AlertDialog.Builder(this);
+                    builder.SetMessage("User exists!");
+                    builder.SetTitle("User authenticated");
+                    builder.Show();
+                });
+                return;
+            }
+            int i = 1;
+
+        }
+
+        //SIGN UP BUTTON STUFF
         private void SignUpButton_Click(object sender, System.EventArgs e)
         {
             //Pulls up the sign up screen
@@ -39,7 +96,7 @@ namespace GotToGeaux
 
             string input = e.FirstName + "\n" + e.Email + "\n" + e.Password + "\n";
             byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
-            
+
             try
             {
                 if (!System.IO.Directory.Exists(folder))
@@ -55,19 +112,12 @@ namespace GotToGeaux
                 RunOnUiThread(() =>
                 {
                     var builder = new AlertDialog.Builder(this);
-                    builder.SetMessage("Not gonna lie, some shit went wrong.");
+                    builder.SetMessage("Not gonna lie, some stuff went wrong.");
                     builder.SetTitle("Unable to sign up user.");
                     builder.Show();
                 });
                 return;
             }
-            //Thread signUpService = new Thread(SignUpUser);
-            //signUpService.Start();
-        }
-
-        private void SignUpUser()
-        {
-            Thread.Sleep(2000);
         }
     }
 }

@@ -75,7 +75,7 @@ namespace GotToGeaux
             //This is the handler for the user clicking the sign up button
             if(InputFirstName.Text.ToString().CompareTo("") == 0 || InputEmail.Text.ToString().CompareTo("") == 0 || InputPassword.Text.ToString().CompareTo("") == 0)
             {
-
+                //Error Handling
             }
             else
             {
