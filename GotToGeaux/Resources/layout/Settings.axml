@@ -6,7 +6,7 @@
     android:minWidth="300dp"
     android:minHeight="400dp">
     <Button
-        android:text="Save Changes"
+        android:text="Dark Theme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/darkTheme"
@@ -20,9 +20,10 @@
         android:paddingTop="2dp"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"
-        android:background="#D29F13" />
+        android:background="#D29F13"
+        android:layout_marginTop="70.5dp" />
     <Button
-        android:text="Save Changes"
+        android:text="Light Theme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/lightTheme"
@@ -37,5 +38,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="30dp"
         android:layout_below="@+id/darkTheme"
-        android:background="#D29F13" />
+        android:background="#D29F13"
+        android:layout_marginTop="46.5dp" />
 </RelativeLayout>
