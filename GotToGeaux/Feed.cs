@@ -168,7 +168,11 @@ namespace GotToGeaux
 
         private void SettingsButton_Click(object sender, EventArgs e)
         {
-            //Does nothing
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            Settings settings = new Settings();
+            settings.Show(transaction, "dialog fragment");
+
+            
         }
 
         private void ProfileButton_Click(object sender, EventArgs e)

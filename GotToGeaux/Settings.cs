@@ -12,6 +12,12 @@ using Android.Widget;
 
 namespace GotToGeaux
 {
+
+    public class OnSettingsChangeEventArgs : EventArgs
+    {
+        //ToDo?
+    }
+
     class Settings : DialogFragment
     {
         private Button darkButton;
@@ -27,6 +33,8 @@ namespace GotToGeaux
 
             lightButton = view.FindViewById<Button>(Resource.Id.lightTheme);
             lightButton.Click += LightButton_Click;
+
+            return view;
         }
 
         private void LightButton_Click(object sender, EventArgs e)
@@ -37,6 +45,14 @@ namespace GotToGeaux
         private void DarkButton_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        public override void OnActivityCreated(Bundle savedInstanceState)
+        {
+            Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
+            base.OnActivityCreated(savedInstanceState);
+
+            Dialog.Window.Attributes.WindowAnimations = Resource.Style.signup_animation;
         }
     }
 }
