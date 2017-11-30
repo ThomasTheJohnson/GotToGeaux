@@ -14,6 +14,8 @@ namespace GotToGeaux
     [Activity(Label = "Feed", MainLauncher = false)]
     public class FeedActivity : Activity
     {
+        private Button profileButton;
+        private Button settingsButton;
         private Button button1;
         private Button button2;
         private Button button3;
@@ -145,13 +147,16 @@ namespace GotToGeaux
                     button14.Text = "Marie Tiffiny - Angelfire, New Mexico";
                     button15.Text = "Tim Cook - San Francisco, California";
 
+            //Profile Button
+            profileButton = FindViewById<Button>(Resource.Id.profileButton);
+            profileButton.Click += ProfileButton_Click;
 
-
-
-
+            //Settings Button
+            settingsButton = FindViewById<Button>(Resource.Id.settingsButton);
+            settingsButton.Click += SettingsButton_Click;
 
             var builder3 = new AlertDialog.Builder(this);
-                    builder3.SetMessage("Welcome " + Intent.GetStringExtra("Username"));
+                    builder3.SetMessage("Welcome " + Intent.GetStringArrayExtra("UserInfo")[0]);
                     builder3.SetTitle("User authenticated");
                     builder3.Show();
                     // Set our view from the "main" layout resource
@@ -159,6 +164,436 @@ namespace GotToGeaux
 
                     //button1 = FindViewById<Button>(Resource.Id.entry1);
                     //button1 = FindViewById<Button>(Resource.Id.entry1);
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            //Does nothing
+        }
+
+        private void ProfileButton_Click(object sender, EventArgs e)
+        {
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            UserProfile userProfile = new UserProfile();
+            userProfile.Show(transaction, "dialog fragment");
+
+            userProfile.mOnSaveChangesComplete += UserProfile_mOnSaveChangesComplete;
+        }
+
+        private void UserProfile_mOnSaveChangesComplete(object sender, OnSaveChangesEventArgs e)
+        {
+            if(e.FirstName.CompareTo("") == 0)
+            {
+                if(e.Email.CompareTo("") == 0)
+                {
+                    //Does Nothing. No Changes.
+                    if(e.Password.CompareTo("") == 0)
+                    {
+
+                    }
+                    //Just the Password Changes
+                    else
+                    {
+                        Thread.Sleep(3000);
+                        var folder = FilesDir + Java.IO.File.Separator + "Users";
+                        var extFileName = folder + Java.IO.File.Separator + Intent.GetStringArrayExtra("UserInfo")[1] + ".txt";
+                        string[] lines = new string[3];
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                throw new System.Exception();
+                            lines = System.IO.File.ReadAllLines(extFileName);
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("User does not exist!");
+                                builder.SetTitle("Unable to authenticate user.");
+                                builder.Show();
+                            });
+                            return;
+                        }
+
+                        lines[2] = e.Password;
+
+                        string input = lines[0] + "\n" + lines[1] + "\n" + lines[2] + "\n";
+                        byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                System.IO.Directory.CreateDirectory(folder);
+                            using (var fs = new System.IO.FileStream(extFileName, System.IO.FileMode.OpenOrCreate))
+                            {
+                                fs.Write(toBytes, 0, toBytes.Length);
+                                fs.Close();
+                            }
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("Not gonna lie, some stuff went wrong.");
+                                builder.SetTitle("Unable to sign up user.");
+                                builder.Show();
+                            });
+                            return;
+                        }
+
+                    }
+                }
+                else
+                {
+                    //Change just the email
+                    if(e.Password.CompareTo("") == 0)
+                    {
+                        Thread.Sleep(3000);
+                        var folder = FilesDir + Java.IO.File.Separator + "Users";
+                        var extFileName = folder + Java.IO.File.Separator + Intent.GetStringArrayExtra("UserInfo")[1] + ".txt";
+                        string[] lines = new string[3];
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                throw new System.Exception();
+                            lines = System.IO.File.ReadAllLines(extFileName);
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("User does not exist!");
+                                builder.SetTitle("Unable to authenticate user.");
+                                builder.Show();
+                            });
+                            return;
+                        }
+
+                        lines[1] = e.Email;
+
+                        string input = lines[0] + "\n" + lines[1] + "\n" + lines[2] + "\n";
+                        byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                System.IO.Directory.CreateDirectory(folder);
+                            using (var fs = new System.IO.FileStream(extFileName, System.IO.FileMode.OpenOrCreate))
+                            {
+                                fs.Write(toBytes, 0, toBytes.Length);
+                                fs.Close();
+                            }
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("Not gonna lie, some stuff went wrong.");
+                                builder.SetTitle("Unable to sign up user.");
+                                builder.Show();
+                            });
+                            return;
+                        }
+
+
+                    }
+                    //Change both the email and password
+                    else
+                    {
+                        Thread.Sleep(3000);
+                        var folder = FilesDir + Java.IO.File.Separator + "Users";
+                        var extFileName = folder + Java.IO.File.Separator + Intent.GetStringArrayExtra("UserInfo")[1] + ".txt";
+                        string[] lines = new string[3];
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                throw new System.Exception();
+                            lines = System.IO.File.ReadAllLines(extFileName);
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("User does not exist!");
+                                builder.SetTitle("Unable to authenticate user.");
+                                builder.Show();
+                            });
+                            return;
+        
+                        }
+
+                        lines[1] = e.Email;
+                        lines[2] = e.Password;
+
+                        string input = lines[0] + "\n" + lines[1] + "\n" + lines[2] + "\n";
+                        byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                System.IO.Directory.CreateDirectory(folder);
+                            using (var fs = new System.IO.FileStream(extFileName, System.IO.FileMode.OpenOrCreate))
+                            {
+                                fs.Write(toBytes, 0, toBytes.Length);
+                                fs.Close();
+                            }
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("Not gonna lie, some stuff went wrong.");
+                                builder.SetTitle("Unable to sign up user.");
+                                builder.Show();
+                            });
+                            return;
+                        }
+
+                    }
+                }
+            }
+            else
+            {
+
+                if(e.Email.CompareTo("") == 0)
+                {
+                    //Just the Username
+                    if(e.Password.CompareTo("") == 0)
+                    {
+                        Thread.Sleep(3000);
+                        var folder = FilesDir + Java.IO.File.Separator + "Users";
+                        var extFileName = folder + Java.IO.File.Separator + Intent.GetStringArrayExtra("UserInfo")[1] + ".txt";
+                        string[] lines = new string[3];
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                throw new System.Exception();
+                            lines = System.IO.File.ReadAllLines(extFileName);
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("User does not exist!");
+                                builder.SetTitle("Unable to authenticate user.");
+                                builder.Show();
+                            });
+                            return;
+
+                        }
+
+                        lines[0] = e.FirstName;
+
+                        string input = lines[0] + "\n" + lines[1] + "\n" + lines[2] + "\n";
+                        byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                System.IO.Directory.CreateDirectory(folder);
+                            using (var fs = new System.IO.FileStream(extFileName, System.IO.FileMode.OpenOrCreate))
+                            {
+                                fs.Write(toBytes, 0, toBytes.Length);
+                                fs.Close();
+                            }
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("Not gonna lie, some stuff went wrong.");
+                                builder.SetTitle("Unable to sign up user.");
+                                builder.Show();
+                            });
+                            return;
+                        }
+
+                    }
+                    //Just the Username and Password
+                    else
+                    {
+                        Thread.Sleep(3000);
+                        var folder = FilesDir + Java.IO.File.Separator + "Users";
+                        var extFileName = folder + Java.IO.File.Separator + Intent.GetStringArrayExtra("UserInfo")[1] + ".txt";
+                        string[] lines = new string[3];
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                throw new System.Exception();
+                            lines = System.IO.File.ReadAllLines(extFileName);
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("User does not exist!");
+                                builder.SetTitle("Unable to authenticate user.");
+                                builder.Show();
+                            });
+                            return;
+
+                        }
+
+                        lines[0] = e.FirstName;
+                        lines[3] = e.Password;
+
+                        string input = lines[0] + "\n" + lines[1] + "\n" + lines[2] + "\n";
+                        byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                System.IO.Directory.CreateDirectory(folder);
+                            using (var fs = new System.IO.FileStream(extFileName, System.IO.FileMode.OpenOrCreate))
+                            {
+                                fs.Write(toBytes, 0, toBytes.Length);
+                                fs.Close();
+                            }
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("Not gonna lie, some stuff went wrong.");
+                                builder.SetTitle("Unable to sign up user.");
+                                builder.Show();
+                            });
+                            return;
+                        }
+
+                    }
+                }
+                else
+                {
+                    //Username and Email
+                    if (e.Password.CompareTo("") == 0)
+                    {
+                        Thread.Sleep(3000);
+                        var folder = FilesDir + Java.IO.File.Separator + "Users";
+                        var extFileName = folder + Java.IO.File.Separator + Intent.GetStringArrayExtra("UserInfo")[1] + ".txt";
+                        string[] lines = new string[3];
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                throw new System.Exception();
+                            lines = System.IO.File.ReadAllLines(extFileName);
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("User does not exist!");
+                                builder.SetTitle("Unable to authenticate user.");
+                                builder.Show();
+                            });
+                            return;
+
+                        }
+
+                        lines[0] = e.FirstName;
+                        lines[1] = e.Email;
+
+                        string input = lines[0] + "\n" + lines[1] + "\n" + lines[2] + "\n";
+                        byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                System.IO.Directory.CreateDirectory(folder);
+                            using (var fs = new System.IO.FileStream(extFileName, System.IO.FileMode.OpenOrCreate))
+                            {
+                                fs.Write(toBytes, 0, toBytes.Length);
+                                fs.Close();
+                            }
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("Not gonna lie, some stuff went wrong.");
+                                builder.SetTitle("Unable to sign up user.");
+                                builder.Show();
+                            });
+                            return;
+                        }
+                    }
+                    //Everything
+                    else
+                    {
+                        Thread.Sleep(3000);
+                        var folder = FilesDir + Java.IO.File.Separator + "Users";
+                        var extFileName = folder + Java.IO.File.Separator + Intent.GetStringArrayExtra("UserInfo")[1] + ".txt";
+                        string[] lines = new string[3];
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                throw new System.Exception();
+                            lines = System.IO.File.ReadAllLines(extFileName);
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("User does not exist!");
+                                builder.SetTitle("Unable to authenticate user.");
+                                builder.Show();
+                            });
+                            return;
+
+                        }
+
+                        lines[0] = e.FirstName;
+                        lines[1] = e.Email;
+                        lines[2] = e.Password;
+
+                        string input = lines[0] + "\n" + lines[1] + "\n" + lines[2] + "\n";
+                        byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
+
+                        try
+                        {
+                            if (!System.IO.Directory.Exists(folder))
+                                System.IO.Directory.CreateDirectory(folder);
+                            using (var fs = new System.IO.FileStream(extFileName, System.IO.FileMode.OpenOrCreate))
+                            {
+                                fs.Write(toBytes, 0, toBytes.Length);
+                                fs.Close();
+                            }
+                        }
+                        catch
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                var builder = new AlertDialog.Builder(this);
+                                builder.SetMessage("Not gonna lie, some stuff went wrong.");
+                                builder.SetTitle("Unable to sign up user.");
+                                builder.Show();
+                            });
+                            return;
+                        }
+
+                    }
+                }
+            }
         }
     }
 }

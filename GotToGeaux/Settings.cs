@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+
+namespace GotToGeaux
+{
+    class Settings : DialogFragment
+    {
+        private Button darkButton;
+        private Button lightButton;
+
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        {
+
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
+
+            darkButton = view.FindViewById<Button>(Resource.Id.darkTheme);
+            darkButton.Click += DarkButton_Click;
+
+            lightButton = view.FindViewById<Button>(Resource.Id.lightTheme);
+            lightButton.Click += LightButton_Click;
+        }
+
+        private void LightButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DarkButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

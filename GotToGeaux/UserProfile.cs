@@ -53,7 +53,7 @@ namespace GotToGeaux
         private EditText InputPassword;
         private Button SaveChangesDialogButton;
 
-        public event EventHandler<OnSignUpEventArgs> mOnSaveChangesComplete;
+        public event EventHandler<OnSaveChangesEventArgs> mOnSaveChangesComplete;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -63,7 +63,7 @@ namespace GotToGeaux
 
             InputFirstName = view.FindViewById<EditText>(Resource.Id.changeFirstNameText);
             InputEmail = view.FindViewById<EditText>(Resource.Id.changeEmailText);
-            InputPassword = view.FindViewById<EditText>(Resource.Id.changeEmailText);
+            InputPassword = view.FindViewById<EditText>(Resource.Id.changePasswordText);
             SaveChangesDialogButton = view.FindViewById<Button>(Resource.Id.saveChangesDialogButton);
 
             SaveChangesDialogButton.Click += SaveChangesDialogButton_Click;
@@ -72,15 +72,8 @@ namespace GotToGeaux
 
         private void SaveChangesDialogButton_Click(object sender, EventArgs e)
         {
-            if (InputFirstName.Text.ToString().CompareTo("") == 0 || InputEmail.Text.ToString().CompareTo("") == 0 || InputPassword.Text.ToString().CompareTo("") == 0)
-            {
+                mOnSaveChangesComplete.Invoke(this, new OnSaveChangesEventArgs(InputFirstName.Text, InputEmail.Text, InputPassword.Text));
                 this.Dismiss();
-            }
-            else
-            {
-                mOnSaveChangesComplete.Invoke(this, new OnSignUpEventArgs(InputFirstName.Text, InputEmail.Text, InputPassword.Text));
-                this.Dismiss();
-            }
         }
 
         public override void OnActivityCreated(Bundle savedInstanceState)

@@ -66,7 +66,7 @@ namespace GotToGeaux
             if (e.Password.CompareTo(lines[2]) == 0)
             {
                 var feed = new Intent(this, typeof(FeedActivity));
-                feed.PutExtra("Username", lines[0]);
+                feed.PutExtra("UserInfo", lines );
                 StartActivity(feed);
             }
             else
