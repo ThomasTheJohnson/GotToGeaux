@@ -11,64 +11,64 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:padding="10dp"
-            android:text="Android ScrollView"
+            android:text="Recent Stops"
             android:textStyle="bold" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Thomas Johnson - Tiger Band Hall" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Timothy Ratliff - Patrick F. Taylor Hall" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="JJ Juarez - Raising Canes" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView"
+            android:text="John Snow - The Wall"
             android:id="@+id/button2" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="LSU Football Team - Florida Stadium" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Vincent Yasmine - Middleton Library" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Alexandra Viola - Middleton Library" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Markus Persson - California" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Jeff Kaplan - Austin, Texas" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Rachael Shel - Seattle, Washington" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Michael Santana - Paris, France" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Luke Smith - Bellevue, Washington" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Marie Tiffiny - Angelfire, New Mexico" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:text="Android ScrollView" />
+            android:text="Tim Cook - San Francisco, California" />
     </LinearLayout>
 </ScrollView>
