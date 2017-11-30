@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:background="#3C1053">
     <TextView
-        android:text="Create An Account"
+        android:text="Got to Geaux?"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace GotToGeaux
 {
-    [Activity(Label = "GotToGeaux", MainLauncher = true)]
+    [Activity(Label = "GotToGeaux", MainLauncher = true, NoHistory = true)]
     public class MainActivity : Activity
     {
         private Button SignUpButton;
@@ -64,14 +64,11 @@ namespace GotToGeaux
 
             if (e.Password.CompareTo(lines[2]) == 0)
             {
-                RunOnUiThread(() =>
-                {
-                    var builder = new AlertDialog.Builder(this);
-                    builder.SetMessage("User exists!");
-                    builder.SetTitle("User authenticated");
-                    builder.Show();
-                });
-                return;
+                //var builder = new AlertDialog.Builder(this);
+                //builder.SetMessage("Welcome " + lines[0]);
+                //builder.SetTitle("User authenticated");
+                //builder.Show();
+                StartActivity(typeof(FeedActivity));
             }
             else
             {
