@@ -21,17 +21,17 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Thomas Johnson - Tiger Band Hall"
-            android:id="@+id/entry2"/>
+            android:id="@+id/entry2" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Timothy Ratliff - Patrick F. Taylor Hall"
-            android:id="@+id/entry3"/>
+            android:id="@+id/entry3" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="JJ Juarez - Raising Canes"
-            android:id="@+id/entry4"/>
+            android:id="@+id/entry4" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -41,27 +41,27 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="LSU Football Team - Florida Stadium"
-            android:id="@+id/entry6"/>
+            android:id="@+id/entry6" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Vincent Yasmine - Middleton Library"
-            android:id="@+id/entry7"/>
+            android:id="@+id/entry7" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Alexandra Viola - Middleton Library"
-            android:id="@+id/entry8"/>
+            android:id="@+id/entry8" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Markus Persson - California"
-            android:id="@+id/entry9"/>
+            android:id="@+id/entry9" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Jeff Kaplan - Austin, Texas"
-            android:id="@+id/entry10"/>
+            android:id="@+id/entry10" />
         <Button
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"

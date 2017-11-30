@@ -1,11 +1,16 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.Widget;
 using Android.OS;
 using Android.Content;
+using System;
 using System.Threading;
+using System.IO;
+using Android.Icu.Text;
 
 namespace GotToGeaux
 {
+
     [Activity(Label = "Feed", MainLauncher = false)]
     public class FeedActivity : Activity
     {
@@ -31,47 +36,129 @@ namespace GotToGeaux
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Feed);
 
+            //var folder = FilesDir + Java.IO.File.Separator + "Entries";
+            //var extFileName = folder + Java.IO.File.Separator + "feedcontent.txt";
 
-            button1 = FindViewById<Button>(Resource.Id.entry1);
-            button1.Text = "Hello Fuckhead";
-            button2 = FindViewById<Button>(Resource.Id.entry2);
-            button2.Text = "Hello Fuckhead";
-            button3 = FindViewById<Button>(Resource.Id.entry3);
-            button3.Text = "Hello Fuckhead";
-            button4 = FindViewById<Button>(Resource.Id.entry4);
-            button4.Text = "Hello Fuckhead";
-            button5 = FindViewById<Button>(Resource.Id.entry5);
-            button5.Text = "Hello Fuckhead";
-            button6 = FindViewById<Button>(Resource.Id.entry6);
-            button6.Text = "Hello Fuckhead";
-            button7 = FindViewById<Button>(Resource.Id.entry7);
-            button7.Text = "Hello Fuckhead";
-            button8 = FindViewById<Button>(Resource.Id.entry8);
-            button8.Text = "Hello Fuckhead";
-            button9 = FindViewById<Button>(Resource.Id.entry9);
-            button9.Text = "Hello Fuckhead";
-            button10 = FindViewById<Button>(Resource.Id.entry10);
-            button10.Text = "Hello Fuckhead";
-            button11 = FindViewById<Button>(Resource.Id.entry11);
-            button11.Text = "Hello Fuckhead";
-            button12 = FindViewById<Button>(Resource.Id.entry12);
-            button12.Text = "Hello Fuckhead";
-            button13 = FindViewById<Button>(Resource.Id.entry13);
-            button13.Text = "Hello Fuckhead";
-            button14 = FindViewById<Button>(Resource.Id.entry14);
-            button14.Text = "Hello Fuckhead";
-            button15 = FindViewById<Button>(Resource.Id.entry15);
-            button15.Text = "Hello Fuckhead";
+            //string input = "Entry1" + "\n" + "Entry2";
+            //byte[] toBytes = System.Text.Encoding.ASCII.GetBytes(input);
 
-            var builder = new AlertDialog.Builder(this);
-            builder.SetMessage("Welcome " + Intent.GetStringExtra("Username"));
-            builder.SetTitle("User authenticated");
-            builder.Show();
-            // Set our view from the "main" layout resource
+            //try
+            //{
+            //    if (!System.IO.Directory.Exists(folder))
+            //        System.IO.Directory.CreateDirectory(folder);
+            //    using (var fs = new System.IO.FileStream(extFileName, FileMode.OpenOrCreate))
+            //    {
+            //        fs.Write(toBytes, 0, toBytes.Length);
+            //        fs.Close();
+            //    }
+            //}
+            //catch
+            //{
+            //    RunOnUiThread(() =>
+            //    {
+            //        var builder1 = new AlertDialog.Builder(this);
+            //        builder1.SetMessage("Not gonna lie, some stuff went wrong.");
+            //        builder1.SetTitle("Unable to sign up user.");
+            //        builder1.Show();
+            //    });
+            //    return;
+            //}
 
-            
-            //button1 = FindViewById<Button>(Resource.Id.entry1);
-            //button1 = FindViewById<Button>(Resource.Id.entry1);
+            //string[] entries = new string[2];
+            //try
+            //{
+            //    if (!System.IO.Directory.Exists(folder))
+            //        throw new System.Exception();
+            //    entries = System.IO.File.ReadAllLines(extFileName);
+            //}
+            //catch
+            //{
+            //    RunOnUiThread(() =>
+            //    {
+            //        var builder2 = new AlertDialog.Builder(this);
+            //        builder2.SetMessage("User does not exist!");
+            //        builder2.SetTitle("Unable to authenticate user.");
+            //        builder2.Show();
+            //    });
+            //    return;
+            //}
+
+
+                    button1 = FindViewById<Button>(Resource.Id.entry1);
+                    //String text1 = entries[0];
+                    //button1.Text = text1;
+                    button2 = FindViewById<Button>(Resource.Id.entry2);
+                    //String text2 = entries[1];
+                    //button1.Text = text2;
+                    button3 = FindViewById<Button>(Resource.Id.entry3);
+                    //String text3 = entries[2];
+                    //button1.Text = text3;
+                    button4 = FindViewById<Button>(Resource.Id.entry4);
+                    //String text4 = sr.ReadLine();
+                    //button1.Text = text4;
+                    button5 = FindViewById<Button>(Resource.Id.entry5);
+                    //String text5 = sr.ReadLine();
+                    //button1.Text = text5;
+                    button6 = FindViewById<Button>(Resource.Id.entry6);
+                    //String text6 = sr.ReadLine();
+                    //button1.Text = text6;
+                    button7 = FindViewById<Button>(Resource.Id.entry7);
+                    //String text7 = sr.ReadLine();
+                    //button1.Text = text7;
+                    button8 = FindViewById<Button>(Resource.Id.entry8);
+                    //String text8 = sr.ReadLine();
+                    //button1.Text = text8;
+                    button9 = FindViewById<Button>(Resource.Id.entry9);
+                    //String text9 = sr.ReadLine();
+                    //button1.Text = text9;
+                    button10 = FindViewById<Button>(Resource.Id.entry10);
+                    //String text10 = sr.ReadLine();
+                    //button1.Text = text10;
+                    button11 = FindViewById<Button>(Resource.Id.entry11);
+                    //String text11 = sr.ReadLine();
+                    //button1.Text = text11;
+                    button12 = FindViewById<Button>(Resource.Id.entry12);
+                    //String text12 = sr.ReadLine();
+                    //button1.Text = text12;
+                    button13 = FindViewById<Button>(Resource.Id.entry13);
+                    //String text13 = sr.ReadLine();
+                    //button1.Text = text13;
+                    button14 = FindViewById<Button>(Resource.Id.entry14);
+                    //String text14 = sr.ReadLine();
+                    //button1.Text = text14;
+                    button15 = FindViewById<Button>(Resource.Id.entry15);
+                    //String text15 = sr.ReadLine();
+                    //button1.Text = text15;
+                    button1.Text = "Ed Orgeron - Tiger Stadium";
+                    button2.Text = "Thomas Johnson - Tiger Band Hall";
+                    button3.Text = "Timothy Ratliff - Patrick F. Taylor Hall";
+                    button4.Text = "JJ Juarez - Raising Canes";
+                    button5.Text = "John Snow - The Wall";
+                    button6.Text = "LSU Football Team - Florida Stadium";
+                    button7.Text = "Vincent Yasmine - Middleton Library";
+                    button8.Text = "Alexandra Viola - Middleton Library";
+                    button9.Text = "Markus Persson - California";
+                    button10.Text = "Jeff Kaplan - Austin, Texas";
+                    button11.Text = "Rachael Shel - Seattle, Washington";
+                    button12.Text = "Michael Santana - Paris, France";
+                    button13.Text = "Luke Smith - Bellevue, Washington";
+                    button14.Text = "Marie Tiffiny - Angelfire, New Mexico";
+                    button15.Text = "Tim Cook - San Francisco, California";
+
+
+
+
+
+
+            var builder3 = new AlertDialog.Builder(this);
+                    builder3.SetMessage("Welcome " + Intent.GetStringExtra("Username"));
+                    builder3.SetTitle("User authenticated");
+                    builder3.Show();
+                    // Set our view from the "main" layout resource
+
+
+                    //button1 = FindViewById<Button>(Resource.Id.entry1);
+                    //button1 = FindViewById<Button>(Resource.Id.entry1);
         }
     }
 }
