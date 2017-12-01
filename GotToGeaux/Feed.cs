@@ -177,6 +177,13 @@ namespace GotToGeaux
             FragmentTransaction transaction = FragmentManager.BeginTransaction();
             MakeEntry makeEntry = new MakeEntry();
             makeEntry.Show(transaction, "dialog fragment");
+
+            makeEntry.mOnMakeEntryComplete += MakeEntry_mOnMakeEntryComplete;
+        }
+
+        private void MakeEntry_mOnMakeEntryComplete(object sender, OnMakeEntryEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void Button1_Click(object sender, EventArgs e)
