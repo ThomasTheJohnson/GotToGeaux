@@ -27,13 +27,13 @@ namespace GotToGeaux
         {
 
             base.OnCreateView(inflater, container, savedInstanceState);
-            var view = inflater.Inflate(Resource.Layout.UserProfile, container, false);
+            var view = inflater.Inflate(Resource.Layout.Settings, container, false);
 
-            //darkButton = view.FindViewById<Button>(Resource.Id.darkTheme);
-            //darkButton.Click += DarkButton_Click;
+            darkButton = view.FindViewById<Button>(Resource.Id.darkTheme);
+            darkButton.Click += DarkButton_Click;
 
-            //lightButton = view.FindViewById<Button>(Resource.Id.lightTheme);
-            //lightButton.Click += LightButton_Click;
+            lightButton = view.FindViewById<Button>(Resource.Id.lightTheme);
+            lightButton.Click += LightButton_Click;
 
             return view;
         }

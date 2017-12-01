@@ -16,6 +16,7 @@ namespace GotToGeaux
     {
         private Button profileButton;
         private Button settingsButton;
+        private Button makeEntry;
         private Button button1;
         private Button button2;
         private Button button3;
@@ -156,6 +157,10 @@ namespace GotToGeaux
             settingsButton = FindViewById<Button>(Resource.Id.settingsButton);
             settingsButton.Click += SettingsButton_Click;
 
+            //Entry Button
+            makeEntry = FindViewById<Button>(Resource.Id.plusButton);
+            makeEntry.Click += MakeEntry_Click;
+
             var builder3 = new AlertDialog.Builder(this);
                     builder3.SetMessage("Welcome " + Intent.GetStringArrayExtra("UserInfo")[0]);
                     builder3.SetTitle("User authenticated");
@@ -165,6 +170,13 @@ namespace GotToGeaux
 
                     //button1 = FindViewById<Button>(Resource.Id.entry1);
                     //button1 = FindViewById<Button>(Resource.Id.entry1);
+        }
+
+        private void MakeEntry_Click(object sender, EventArgs e)
+        {
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            MakeEntry makeEntry = new MakeEntry();
+            makeEntry.Show(transaction, "dialog fragment");
         }
 
         private void Button1_Click(object sender, EventArgs e)

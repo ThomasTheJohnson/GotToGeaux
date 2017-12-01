@@ -33,6 +33,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="73.0dp"
                 android:id="@+id/textView1" />
+            <Button
+                android:background="@drawable/plus"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/plusButton" />
         </LinearLayout>
         <Button
             android:textColor="#fff"
