@@ -39,6 +39,7 @@
             android:background="#461D7C"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_margin="7dp"
             android:id="@+id/entry1" />
         <Button
             android:textColor="#fff"
@@ -46,6 +47,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Thomas Johnson - Tiger Band Hall"
+            android:layout_margin="7dp"
             android:id="@+id/entry2" />
         <Button
             android:textColor="#fff"
@@ -53,6 +55,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Timothy Ratliff - Patrick F. Taylor Hall"
+            android:layout_margin="7dp"
             android:id="@+id/entry3" />
         <Button
             android:textColor="#fff"
@@ -60,6 +63,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="JJ Juarez - Raising Canes"
+            android:layout_margin="7dp"
             android:id="@+id/entry4" />
         <Button
             android:textColor="#fff"
@@ -67,6 +71,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="John Snow - The Wall"
+            android:layout_margin="7dp"
             android:id="@+id/entry5" />
         <Button
             android:textColor="#fff"
@@ -74,6 +79,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Tim Cook - San Francisco, California"
+            android:layout_margin="7dp"
             android:id="@+id/entry6" />
         <Button
             android:textColor="#fff"
@@ -81,6 +87,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Vincent Yasmine - Middleton Library"
+            android:layout_margin="7dp"
             android:id="@+id/entry7" />
         <Button
             android:textColor="#fff"
@@ -88,6 +95,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Alexandra Viola - Middleton Library"
+            android:layout_margin="7dp"
             android:id="@+id/entry8" />
         <Button
             android:textColor="#fff"
@@ -95,6 +103,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Markus Persson - California"
+            android:layout_margin="7dp"
             android:id="@+id/entry9" />
         <Button
             android:textColor="#fff"
@@ -102,6 +111,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Jeff Kaplan - Austin, Texas"
+            android:layout_margin="7dp"
             android:id="@+id/entry10" />
         <Button
             android:textColor="#fff"
@@ -109,6 +119,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Rachael Shel - Seattle, Washington"
+            android:layout_margin="7dp"
             android:id="@+id/entry11" />
         <Button
             android:textColor="#fff"
@@ -116,6 +127,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Michael Santana - Paris, France"
+            android:layout_margin="7dp"
             android:id="@+id/entry12" />
         <Button
             android:textColor="#fff"
@@ -123,6 +135,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Luke Smith - Bellevue, Washington"
+            android:layout_margin="7dp"
             android:id="@+id/entry13" />
         <Button
             android:textColor="#fff"
@@ -130,6 +143,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Marie Tiffiny - Angelfire, New Mexico"
+            android:layout_margin="7dp"
             android:id="@+id/entry14" />
         <Button
             android:textColor="#fff"
@@ -137,6 +151,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:text="Tim Cook - San Francisco, California"
+            android:layout_margin="7dp"
             android:id="@+id/entry15" />
     </LinearLayout>
 </ScrollView>

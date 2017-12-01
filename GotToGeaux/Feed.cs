@@ -87,6 +87,7 @@ namespace GotToGeaux
 
 
                     button1 = FindViewById<Button>(Resource.Id.entry1);
+                    button1.Click += Button1_Click;
                     //String text1 = entries[0];
                     //button1.Text = text1;
                     button2 = FindViewById<Button>(Resource.Id.entry2);
@@ -164,6 +165,13 @@ namespace GotToGeaux
 
                     //button1 = FindViewById<Button>(Resource.Id.entry1);
                     //button1 = FindViewById<Button>(Resource.Id.entry1);
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FragmentTransaction transaction = FragmentManager.BeginTransaction();
+            ReviewDialog reviewDialog = new ReviewDialog();
+            reviewDialog.Show(transaction, "dialog fragment");
         }
 
         private void SettingsButton_Click(object sender, EventArgs e)
