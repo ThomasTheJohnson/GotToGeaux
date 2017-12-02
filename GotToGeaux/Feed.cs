@@ -121,67 +121,67 @@ namespace GotToGeaux
             //}
 
 
-                    button1 = FindViewById<Button>(Resource.Id.entry1);
-                    button1.Click += Button1_Click;
-                    //String text1 = entries[0];
-                    //button1.Text = text1;
-                    button2 = FindViewById<Button>(Resource.Id.entry2);
-                    //String text2 = entries[1];
-                    //button1.Text = text2;
-                    button3 = FindViewById<Button>(Resource.Id.entry3);
-                    //String text3 = entries[2];
-                    //button1.Text = text3;
-                    button4 = FindViewById<Button>(Resource.Id.entry4);
-                    //String text4 = sr.ReadLine();
-                    //button1.Text = text4;
-                    button5 = FindViewById<Button>(Resource.Id.entry5);
-                    //String text5 = sr.ReadLine();
-                    //button1.Text = text5;
-                    button6 = FindViewById<Button>(Resource.Id.entry6);
-                    //String text6 = sr.ReadLine();
-                    //button1.Text = text6;
-                    button7 = FindViewById<Button>(Resource.Id.entry7);
-                    //String text7 = sr.ReadLine();
-                    //button1.Text = text7;
-                    button8 = FindViewById<Button>(Resource.Id.entry8);
-                    //String text8 = sr.ReadLine();
-                    //button1.Text = text8;
-                    button9 = FindViewById<Button>(Resource.Id.entry9);
-                    //String text9 = sr.ReadLine();
-                    //button1.Text = text9;
-                    button10 = FindViewById<Button>(Resource.Id.entry10);
-                    //String text10 = sr.ReadLine();
-                    //button1.Text = text10;
-                    button11 = FindViewById<Button>(Resource.Id.entry11);
-                    //String text11 = sr.ReadLine();
-                    //button1.Text = text11;
-                    button12 = FindViewById<Button>(Resource.Id.entry12);
-                    //String text12 = sr.ReadLine();
-                    //button1.Text = text12;
-                    button13 = FindViewById<Button>(Resource.Id.entry13);
-                    //String text13 = sr.ReadLine();
-                    //button1.Text = text13;
-                    button14 = FindViewById<Button>(Resource.Id.entry14);
-                    //String text14 = sr.ReadLine();
-                    //button1.Text = text14;
-                    button15 = FindViewById<Button>(Resource.Id.entry15);
-                    //String text15 = sr.ReadLine();
-                    //button1.Text = text15;
-                    button1.Text = "Ed Orgeron - Tiger Stadium";
-                    button2.Text = "Thomas Johnson - Tiger Band Hall";
-                    button3.Text = "Timothy Ratliff - Patrick F. Taylor Hall";
-                    button4.Text = "JJ Juarez - Raising Canes";
-                    button5.Text = "John Snow - The Wall";
-                    button6.Text = "Tim Cook - San Francisco, California";
-                    button7.Text = "Vincent Yasmine - Middleton Library";
-                    button8.Text = "Alexandra Viola - Middleton Library";
-                    button9.Text = "Markus Persson - California";
-                    button10.Text = "Jeff Kaplan - Austin, Texas";
-                    button11.Text = "Rachael Shel - Seattle, Washington";
-                    button12.Text = "Michael Santana - Paris, France";
-                    button13.Text = "Luke Smith - Bellevue, Washington";
-                    button14.Text = "Marie Tiffiny - Angelfire, New Mexico";
-                    button15.Text = "Tim Cook - San Francisco, California";
+            button1 = FindViewById<Button>(Resource.Id.entry1);
+            button1.Click += Button_Click;
+
+            button2 = FindViewById<Button>(Resource.Id.entry2);
+            button2.Click += Button_Click;
+
+            button3 = FindViewById<Button>(Resource.Id.entry3);
+            button3.Click += Button_Click;
+            
+            button4 = FindViewById<Button>(Resource.Id.entry4);
+            button4.Click += Button_Click;
+
+            button5 = FindViewById<Button>(Resource.Id.entry5);
+            button5.Click += Button_Click;
+
+            button6 = FindViewById<Button>(Resource.Id.entry6);
+            button6.Click += Button_Click;
+
+            button7 = FindViewById<Button>(Resource.Id.entry7);
+            button7.Click += Button_Click;
+
+            button8 = FindViewById<Button>(Resource.Id.entry8);
+            button8.Click += Button_Click;
+
+            button9 = FindViewById<Button>(Resource.Id.entry9);
+            button9.Click += Button_Click;
+
+            button10 = FindViewById<Button>(Resource.Id.entry10);
+            button10.Click += Button_Click;
+
+            button11 = FindViewById<Button>(Resource.Id.entry11);
+            button11.Click += Button_Click;
+
+            button12 = FindViewById<Button>(Resource.Id.entry12);
+            button12.Click += Button_Click;
+
+            button13 = FindViewById<Button>(Resource.Id.entry13);
+            button13.Click += Button_Click;
+
+            button14 = FindViewById<Button>(Resource.Id.entry14);
+            button14.Click += Button_Click;
+
+            button15 = FindViewById<Button>(Resource.Id.entry15);
+            button15.Click += Button_Click;
+
+
+            button1.Text = "Ed Orgeron - Tiger Stadium";
+            button2.Text = "Thomas Johnson - Tiger Band Hall";
+            button3.Text = "Timothy Ratliff - Patrick F. Taylor Hall";
+            button4.Text = "JJ Juarez - Raising Canes";
+            button5.Text = "John Snow - The Wall";
+            button6.Text = "Tim Cook - San Francisco, California";
+            button7.Text = "Vincent Yasmine - Middleton Library";
+            button8.Text = "Alexandra Viola - Middleton Library";
+            button9.Text = "Markus Persson - California";
+            button10.Text = "Jeff Kaplan - Austin, Texas";
+            button11.Text = "Rachael Shel - Seattle, Washington";
+            button12.Text = "Michael Santana - Paris, France";
+            button13.Text = "Luke Smith - Bellevue, Washington";
+            button14.Text = "Marie Tiffiny - Angelfire, New Mexico";
+            button15.Text = "Tim Cook - San Francisco, California";
 
             //Profile Button
             profileButton = FindViewById<Button>(Resource.Id.profileButton);
@@ -196,14 +196,9 @@ namespace GotToGeaux
             makeEntry.Click += MakeEntry_Click;
 
             var builder3 = new AlertDialog.Builder(this);
-                    builder3.SetMessage("Welcome " + Intent.GetStringArrayExtra("UserInfo")[0]);
-                    builder3.SetTitle("User authenticated");
-                    builder3.Show();
-                    // Set our view from the "main" layout resource
-
-
-                    //button1 = FindViewById<Button>(Resource.Id.entry1);
-                    //button1 = FindViewById<Button>(Resource.Id.entry1);
+            builder3.SetMessage("Welcome " + Intent.GetStringArrayExtra("UserInfo")[0]);
+            builder3.SetTitle("User authenticated");
+            builder3.Show();
         }
 
         private void MakeEntry_Click(object sender, EventArgs e)
@@ -226,7 +221,7 @@ namespace GotToGeaux
             
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
             Button buttonThatSent = sender as Button;
             if(buttonThatSent.Id == button1.Id)
