@@ -211,18 +211,31 @@ namespace GotToGeaux
         private void MakeEntry_mOnMakeEntryComplete(object sender, OnMakeEntryEventArgs e)
         {
             button15.Text = button14.Text;
+            review15 = review14;
             button14.Text = button13.Text;
+            review14 = review13;
             button13.Text = button12.Text;
+            review13 = review12;
             button12.Text = button11.Text;
+            review12 = review11;
             button10.Text = button9.Text;
+            review11 = review10;
             button9.Text = button8.Text;
+            review10 = review9;
             button8.Text = button7.Text;
+            review8 = review7;
             button7.Text = button6.Text;
+            review7 = review6;
             button6.Text = button5.Text;
+            review6 = review5;
             button5.Text = button4.Text;
+            review5 = review4;
             button4.Text = button3.Text;
+            review4 = review3;
             button3.Text = button2.Text;
+            review3 = review2;
             button2.Text = button1.Text;
+            review2 = review1;
             button1.Text = Intent.GetStringArrayExtra("UserInfo")[0] + " - " + e.WhereInput;
             
         }
