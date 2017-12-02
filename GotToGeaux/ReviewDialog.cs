@@ -23,5 +23,13 @@ namespace GotToGeaux
             
             return view;
         }
+
+        public override void OnActivityCreated(Bundle savedInstanceState)
+        {
+            Dialog.Window.RequestFeature(WindowFeatures.NoTitle);
+            base.OnActivityCreated(savedInstanceState);
+            //sets the animation
+            Dialog.Window.Attributes.WindowAnimations = Resource.Style.signup_animation;
+        }
     }
 }
