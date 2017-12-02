@@ -65,8 +65,6 @@ namespace GotToGeaux
         private Button button15;
         private ReviewDialog review15 = new ReviewDialog();
 
-        private int entryNumber = 1;
-
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -212,12 +210,20 @@ namespace GotToGeaux
 
         private void MakeEntry_mOnMakeEntryComplete(object sender, OnMakeEntryEventArgs e)
         {
-            if(entryNumber == 15)
-            {
-                entryNumber = 1;
-            }
-
-
+            button15.Text = button14.Text;
+            button14.Text = button13.Text;
+            button13.Text = button12.Text;
+            button12.Text = button11.Text;
+            button10.Text = button9.Text;
+            button9.Text = button8.Text;
+            button8.Text = button7.Text;
+            button7.Text = button6.Text;
+            button6.Text = button5.Text;
+            button5.Text = button4.Text;
+            button4.Text = button3.Text;
+            button3.Text = button2.Text;
+            button2.Text = button1.Text;
+            button1.Text = Intent.GetStringArrayExtra("UserInfo")[0] + " - " + e.WhereInput;
             
         }
 
