@@ -52,7 +52,7 @@
         android:background="#461D7C"
         android:textColorHint="#aaa" />
     <TextView
-        android:id="@+id/whereTextEntry"
+        android:id="@+id/howTextEntry"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginBottom="20dp"
@@ -82,7 +82,7 @@
         android:background="#461D7C"
         android:textColorHint="#aaa" />
     <TextView
-        android:id="@+id/whereTextEntry"
+        android:id="@+id/againTextEntry"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginBottom="20dp"

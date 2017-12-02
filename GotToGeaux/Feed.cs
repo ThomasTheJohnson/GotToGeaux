@@ -21,49 +21,49 @@ namespace GotToGeaux
 
         //Feed buttons
         private Button button1;
-        private ReviewDialog review1 = new ReviewDialog();
+        private ReviewDialog review1 = new ReviewDialog("","","");
 
         private Button button2;
-        private ReviewDialog review2 = new ReviewDialog();
+        private ReviewDialog review2 = new ReviewDialog("", "", "");
 
         private Button button3;
-        private ReviewDialog review3 = new ReviewDialog();
+        private ReviewDialog review3 = new ReviewDialog("", "", "");
 
         private Button button4;
-        private ReviewDialog review4 = new ReviewDialog();
+        private ReviewDialog review4 = new ReviewDialog("", "", "");
 
         private Button button5;
-        private ReviewDialog review5 = new ReviewDialog();
+        private ReviewDialog review5 = new ReviewDialog("", "", "");
 
         private Button button6;
-        private ReviewDialog review6 = new ReviewDialog();
+        private ReviewDialog review6 = new ReviewDialog("", "", "");
 
         private Button button7;
-        private ReviewDialog review7 = new ReviewDialog();
+        private ReviewDialog review7 = new ReviewDialog("", "", "");
 
         private Button button8;
-        private ReviewDialog review8 = new ReviewDialog();
+        private ReviewDialog review8 = new ReviewDialog("", "", "");
 
         private Button button9;
-        private ReviewDialog review9 = new ReviewDialog();
+        private ReviewDialog review9 = new ReviewDialog("", "", "");
 
         private Button button10;
-        private ReviewDialog review10 = new ReviewDialog();
+        private ReviewDialog review10 = new ReviewDialog("", "", "");
 
         private Button button11;
-        private ReviewDialog review11 = new ReviewDialog();
+        private ReviewDialog review11 = new ReviewDialog("", "", "");
 
         private Button button12;
-        private ReviewDialog review12 = new ReviewDialog();
+        private ReviewDialog review12 = new ReviewDialog("", "", "");
 
         private Button button13;
-        private ReviewDialog review13 = new ReviewDialog();
+        private ReviewDialog review13 = new ReviewDialog("", "", "");
 
         private Button button14;
-        private ReviewDialog review14 = new ReviewDialog();
+        private ReviewDialog review14 = new ReviewDialog("", "", "");
 
         private Button button15;
-        private ReviewDialog review15 = new ReviewDialog();
+        private ReviewDialog review15 = new ReviewDialog("", "", "");
 
 
         protected override void OnCreate(Bundle bundle)
@@ -237,7 +237,8 @@ namespace GotToGeaux
             button2.Text = button1.Text;
             review2 = review1;
             button1.Text = Intent.GetStringArrayExtra("UserInfo")[0] + " - " + e.WhereInput;
-            
+            review1 = new ReviewDialog(e.WhereInput,e.HowInput,e.AgainInput);
+           
         }
 
         private void Button_Click(object sender, EventArgs e)

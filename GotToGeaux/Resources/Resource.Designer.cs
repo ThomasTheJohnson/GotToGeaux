@@ -2868,6 +2868,9 @@ namespace GotToGeaux
 			// aapt resource value: 0x7f08009b
 			public const int againText = 2131230875;
 			
+			// aapt resource value: 0x7f0800d0
+			public const int againTextEntry = 2131230928;
+			
 			// aapt resource value: 0x7f080058
 			public const int alertTitle = 2131230808;
 			
@@ -2901,14 +2904,14 @@ namespace GotToGeaux
 			// aapt resource value: 0x7f080032
 			public const int center_vertical = 2131230770;
 			
-			// aapt resource value: 0x7f0800da
-			public const int changeEmailText = 2131230938;
-			
-			// aapt resource value: 0x7f0800d9
-			public const int changeFirstNameText = 2131230937;
+			// aapt resource value: 0x7f0800dc
+			public const int changeEmailText = 2131230940;
 			
 			// aapt resource value: 0x7f0800db
-			public const int changePasswordText = 2131230939;
+			public const int changeFirstNameText = 2131230939;
+			
+			// aapt resource value: 0x7f0800dd
+			public const int changePasswordText = 2131230941;
 			
 			// aapt resource value: 0x7f08005b
 			public const int checkbox = 2131230811;
@@ -2943,8 +2946,8 @@ namespace GotToGeaux
 			// aapt resource value: 0x7f080054
 			public const int customPanel = 2131230804;
 			
-			// aapt resource value: 0x7f0800cf
-			public const int darkTheme = 2131230927;
+			// aapt resource value: 0x7f0800d1
+			public const int darkTheme = 2131230929;
 			
 			// aapt resource value: 0x7f080062
 			public const int decor_content_parent = 2131230818;
@@ -3060,6 +3063,9 @@ namespace GotToGeaux
 			// aapt resource value: 0x7f08009a
 			public const int howText = 2131230874;
 			
+			// aapt resource value: 0x7f0800cf
+			public const int howTextEntry = 2131230927;
+			
 			// aapt resource value: 0x7f080049
 			public const int icon = 2131230793;
 			
@@ -3084,8 +3090,8 @@ namespace GotToGeaux
 			// aapt resource value: 0x7f080034
 			public const int left = 2131230772;
 			
-			// aapt resource value: 0x7f0800d0
-			public const int lightTheme = 2131230928;
+			// aapt resource value: 0x7f0800d2
+			public const int lightTheme = 2131230930;
 			
 			// aapt resource value: 0x7f0800c9
 			public const int line1 = 2131230921;
@@ -3105,8 +3111,8 @@ namespace GotToGeaux
 			// aapt resource value: 0x7f08009c
 			public const int makeEntryButton = 2131230876;
 			
-			// aapt resource value: 0x7f0800de
-			public const int masked = 2131230942;
+			// aapt resource value: 0x7f0800e0
+			public const int masked = 2131230944;
 			
 			// aapt resource value: 0x7f0800bd
 			public const int media_actions = 2131230909;
@@ -3234,8 +3240,8 @@ namespace GotToGeaux
 			// aapt resource value: 0x7f080082
 			public const int profileButton = 2131230850;
 			
-			// aapt resource value: 0x7f0800d8
-			public const int profilePicture = 2131230936;
+			// aapt resource value: 0x7f0800da
+			public const int profilePicture = 2131230938;
 			
 			// aapt resource value: 0x7f080006
 			public const int progress_circular = 2131230726;
@@ -3255,8 +3261,8 @@ namespace GotToGeaux
 			// aapt resource value: 0x7f0800c1
 			public const int right_side = 2131230913;
 			
-			// aapt resource value: 0x7f0800dc
-			public const int saveChangesDialogButton = 2131230940;
+			// aapt resource value: 0x7f0800de
+			public const int saveChangesDialogButton = 2131230942;
 			
 			// aapt resource value: 0x7f08001a
 			public const int screen = 2131230746;
@@ -3327,29 +3333,29 @@ namespace GotToGeaux
 			// aapt resource value: 0x7f080096
 			public const int signInButton = 2131230870;
 			
+			// aapt resource value: 0x7f0800d5
+			public const int signInDialogButton = 2131230933;
+			
 			// aapt resource value: 0x7f0800d3
-			public const int signInDialogButton = 2131230931;
+			public const int signInEmailText = 2131230931;
 			
-			// aapt resource value: 0x7f0800d1
-			public const int signInEmailText = 2131230929;
-			
-			// aapt resource value: 0x7f0800d2
-			public const int signInPasswordText = 2131230930;
+			// aapt resource value: 0x7f0800d4
+			public const int signInPasswordText = 2131230932;
 			
 			// aapt resource value: 0x7f080098
 			public const int signUpButton = 2131230872;
 			
+			// aapt resource value: 0x7f0800d9
+			public const int signUpDialogButton = 2131230937;
+			
 			// aapt resource value: 0x7f0800d7
-			public const int signUpDialogButton = 2131230935;
-			
-			// aapt resource value: 0x7f0800d5
-			public const int signUpEmailText = 2131230933;
-			
-			// aapt resource value: 0x7f0800d4
-			public const int signUpFirstNameText = 2131230932;
+			public const int signUpEmailText = 2131230935;
 			
 			// aapt resource value: 0x7f0800d6
-			public const int signUpPasswordText = 2131230934;
+			public const int signUpFirstNameText = 2131230934;
+			
+			// aapt resource value: 0x7f0800d8
+			public const int signUpPasswordText = 2131230936;
 			
 			// aapt resource value: 0x7f080073
 			public const int smallLabel = 2131230835;
@@ -3453,8 +3459,8 @@ namespace GotToGeaux
 			// aapt resource value: 0x7f08000e
 			public const int view_offset_helper = 2131230734;
 			
-			// aapt resource value: 0x7f0800dd
-			public const int visible = 2131230941;
+			// aapt resource value: 0x7f0800df
+			public const int visible = 2131230943;
 			
 			// aapt resource value: 0x7f0800af
 			public const int volume_item_container = 2131230895;
