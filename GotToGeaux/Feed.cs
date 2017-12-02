@@ -14,24 +14,58 @@ namespace GotToGeaux
     [Activity(Label = "Feed", MainLauncher = false)]
     public class FeedActivity : Activity
     {
+        //Top level buttons
         private Button profileButton;
         private Button settingsButton;
         private Button makeEntry;
+
+        //Feed buttons
         private Button button1;
+        private ReviewDialog review1 = new ReviewDialog();
+
         private Button button2;
+        private ReviewDialog review2 = new ReviewDialog();
+
         private Button button3;
+        private ReviewDialog review3 = new ReviewDialog();
+
         private Button button4;
+        private ReviewDialog review4 = new ReviewDialog();
+
         private Button button5;
+        private ReviewDialog review5 = new ReviewDialog();
+
         private Button button6;
+        private ReviewDialog review6 = new ReviewDialog();
+
         private Button button7;
+        private ReviewDialog review7 = new ReviewDialog();
+
         private Button button8;
+        private ReviewDialog review8 = new ReviewDialog();
+
         private Button button9;
+        private ReviewDialog review9 = new ReviewDialog();
+
         private Button button10;
+        private ReviewDialog review10 = new ReviewDialog();
+
         private Button button11;
+        private ReviewDialog review11 = new ReviewDialog();
+
         private Button button12;
+        private ReviewDialog review12 = new ReviewDialog();
+
         private Button button13;
+        private ReviewDialog review13 = new ReviewDialog();
+
         private Button button14;
+        private ReviewDialog review14 = new ReviewDialog();
+
         private Button button15;
+        private ReviewDialog review15 = new ReviewDialog();
+
+        private int entryNumber = 1;
 
 
         protected override void OnCreate(Bundle bundle)
@@ -183,14 +217,95 @@ namespace GotToGeaux
 
         private void MakeEntry_mOnMakeEntryComplete(object sender, OnMakeEntryEventArgs e)
         {
-            throw new NotImplementedException();
+            if(entryNumber == 15)
+            {
+                entryNumber = 1;
+            }
+
+
+            
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            FragmentTransaction transaction = FragmentManager.BeginTransaction();
-            ReviewDialog reviewDialog = new ReviewDialog();
-            reviewDialog.Show(transaction, "dialog fragment");
+            Button buttonThatSent = sender as Button;
+            if(buttonThatSent.Id == button1.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review1.Show(transaction, "dialog fragment");
+            }
+            else if(buttonThatSent.Id == button2.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review2.Show(transaction, "dialog fragment");
+            }
+            else if (buttonThatSent.Id == button3.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review3.Show(transaction, "dialog fragment");
+            }
+            else if (buttonThatSent.Id == button4.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review4.Show(transaction, "dialog fragment");
+            }
+            else if (buttonThatSent.Id == button5.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review5.Show(transaction, "dialog fragment");
+            }
+            else if (buttonThatSent.Id == button6.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review6.Show(transaction, "dialog fragment");
+
+            }
+            else if (buttonThatSent.Id == button7.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review7.Show(transaction, "dialog fragment");
+            }
+
+            else if (buttonThatSent.Id == button8.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review8.Show(transaction, "dialog fragment");
+            }
+            else if (buttonThatSent.Id == button9.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review9.Show(transaction, "dialog fragment");
+            }
+            else if (buttonThatSent.Id == button10.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review10.Show(transaction, "dialog fragment");
+            }
+            else if (buttonThatSent.Id == button11.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review11.Show(transaction, "dialog fragment");
+            }
+            else if (buttonThatSent.Id == button12.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review12.Show(transaction, "dialog fragment");
+            }
+            else if (buttonThatSent.Id == button13.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review13.Show(transaction, "dialog fragment");
+            }
+            else if (buttonThatSent.Id == button14.Id)
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review14.Show(transaction, "dialog fragment");
+            }
+            else 
+            {
+                FragmentTransaction transaction = FragmentManager.BeginTransaction();
+                review15.Show(transaction, "dialog fragment");
+            }
         }
 
         private void SettingsButton_Click(object sender, EventArgs e)
